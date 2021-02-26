@@ -6,8 +6,8 @@
 #SBATCH --mem=1GB
 #SBATCH --array=1-10
 #SBATCH --gres=gpu:1
-#SBATCH --err="logs/main_%a.err"
-#SBATCH --output="logs/main_%a.out"
+#SBATCH --err="hpc_logs/main_%a.err"
+#SBATCH --output="hpc_logs/main_%a.out"
 #SBATCH --job-name="main_job"
 
 # Setup Python Environment
@@ -21,4 +21,4 @@ module load git/2.21.0-foss-2016b
 echo "array_job_index: $SLURM_ARRAY_TASK_ID"
 
 # Start singularity instance
-singularity run main.simg -p main -r $SLURM_ARRAY_TASK_ID
+singularity run main.simg -p main -a $SLURM_ARRAY_TASK_ID
