@@ -2,7 +2,7 @@
 
 # Research Project Example
 
-This is an example project to show the setup of singlarity.
+This is an example project to show the setup of singlarity-based experimental research.
 
 ### Setup without container (requires gdown)
 
