@@ -1,31 +1,34 @@
 #!/bin/bash
-  
+
 echo "Welcome to the CLI! \
 Please use '-p initialise' if it's your first time. \
 This CLI must be run in the directory folder of the cloned repository."
-usage() { echo "Usage: $0 \
+usage() {
+    echo "Usage: $0 \
 [-h help] \
 [-p run program <initialise|path_to_file>] \
-[-a arguments]" 1>&2; exit 1; }
+    [-a arguments]" 1>&2
+    exit 1
+}
 
 while getopts ":hp:a:n" opt; do
     case ${opt} in
-        h)
-            usage
+    h)
+        usage
         ;;
-        p)
-            p=${OPTARG}
+    p)
+        p=${OPTARG}
         ;;
-        a)
-            a+=("${OPTARG}")
+    a)
+        a+=("${OPTARG}")
         ;;
-        \?)
-            echo "Invalid option"
-            usage
+    \?)
+        echo "Invalid option"
+        usage
         ;;
     esac
 done
-shift $((OPTIND-1))
+shift $((OPTIND - 1))
 
 # Download data and install main code
 if [[ "initialise" == "${p}" ]]; then
