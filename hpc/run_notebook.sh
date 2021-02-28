@@ -2,7 +2,7 @@
 #SBATCH -p batch
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH --time=00:30:00
+#SBATCH --time=12:30:00
 #SBATCH --mem=2GB
 #SBATCH --gres=gpu:1
 #SBATCH --err="gpunb.info"
@@ -21,7 +21,7 @@ cluster=$(hostname -f | awk -F"." '{print $2}')
 
 # print tunneling instructions
 echo "Paste this command in your terminal."
-echo "ssh -N -L ${port}:${node}:${port} ${user}@${cluster}phoenix-login1.adelaide.edu.au"
+echo "ssh -N -L ${port}:${node}:${port} -L 6006:${node}:6006 ${user}@${cluster}phoenix-login1.adelaide.edu.au"
 
 # Start singularity instance
 singularity exec --nv main.simg jupyter notebook --port=${port} --ip=${node}
