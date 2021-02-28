@@ -2,8 +2,8 @@
 
 # Research Project Example
 
-This is an example project to show the setup of python and singularity-based experimental research.
-The idea is to decouple:
+This is an example project to show the setup of python and singularity-based experimental research. The aim is to provide a generalised research-oriented framework/workflow that supports reproducible science.
+The basic idea is to decouple:
 
 - Development environment (Singularity)
 - Experimental code (Python module)
