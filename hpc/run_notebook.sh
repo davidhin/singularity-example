@@ -24,4 +24,4 @@ echo "Paste this command in your terminal."
 echo "ssh -N -L ${port}:${node}:${port} ${user}@${cluster}phoenix-login1.adelaide.edu.au"
 
 # Start singularity instance
-singularity exec main.simg jupyter notebook --port=${port} --ip=${node}
+singularity exec --nv main.simg jupyter notebook --port=${port} --ip=${node}
