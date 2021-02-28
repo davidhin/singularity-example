@@ -2,6 +2,7 @@
   "jupyter.jupyterServerType": "local",
   "files.exclude": {
     ".pytest_cache": true,
-    "**/*.egg-info": true
+    "**/*.egg-info": true,
+    "**/__pycache__": true
   }
 }
