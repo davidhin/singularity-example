@@ -1,5 +1,5 @@
 Bootstrap:docker
-From:python:3.8-slim
+From:tensorflow/tensorflow:2.2.2-gpu-jupyter
 
 %labels
     MAINTAINER admin
