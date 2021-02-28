@@ -3,6 +3,7 @@
   "files.exclude": {
     ".pytest_cache": true,
     "**/*.egg-info": true,
-    "**/__pycache__": true
+    "**/__pycache__": true,
+    "**/main.img": true
   }
 }
