@@ -1,2 +1,6 @@
 .vscode
 main.img
+.pytest_cache
+__pycache__
+storage
+*.egg-info
