@@ -4,7 +4,7 @@
 
 This is an example project to show the setup of singlarity.
 
-### Setup without container
+### Setup without container (requires gdown)
 
 ```
 bash get_data.sh
