@@ -15,6 +15,7 @@ def print_examples():
     print(se.storage_root())
 
     df = pd.read_csv(se.storage_root() / "iris.csv")
+    df.to_csv(se.outputs_root() / "iris.csv")
     print(df)
 
 
