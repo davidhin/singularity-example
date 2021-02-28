@@ -1,5 +1,5 @@
 Bootstrap:docker
-From:python:3.6
+From:python:3.8-slim
 
 %labels
     MAINTAINER admin
