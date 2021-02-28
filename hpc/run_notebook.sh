@@ -2,18 +2,26 @@
 #SBATCH -p batch
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH --time=00:10:00
-#SBATCH --mem=1GB
-#SBATCH --err="hpc/logs/main_%a.err"
-#SBATCH --output="hpc/logs/main_%a.out"
-#SBATCH --job-name="main_job"
+#SBATCH --time=00:30:00
+#SBATCH --mem=2GB
+#SBATCH --gres=gpu:1
+#SBATCH --err="gpunb.info"
+#SBATCH --output="gpunb.info"
+#SBATCH --job-name="gpunb"
 
 # Setup Python Environment
-module load arch/haswell
-module load Anaconda3/2020.07
-module load CUDA/10.2.89
 module load Singularity
-module load git/2.21.0-foss-2016b
+module load CUDA/10.2.89
+
+# get tunneling info
+port=$(shuf -i8000-9999 -n1)
+node=$(hostname -s)
+user=$(whoami)
+cluster=$(hostname -f | awk -F"." '{print $2}')
+
+# print tunneling instructions
+echo "Paste this command in your terminal."
+echo "ssh -N -L ${port}:${node}:${port} ${user}@${cluster}phoenix-login1.adelaide.edu.au"
 
 # Start singularity instance
-singularity run main.simg -n
+singularity exec main.simg jupyter notebook --port=${port} --ip=${node}

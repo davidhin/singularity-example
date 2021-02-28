@@ -6,11 +6,7 @@ This CLI must be run in the directory folder of the cloned repository."
 usage() { echo "Usage: $0 \
 [-h help] \
 [-p run program <initialise|path_to_file>] \
-[-a arguments] \
-[-n run jupyter notebook]" 1>&2; exit 1; }
-
-port=$(shuf -i8000-9999 -n1)
-node=$(hostname -s)
+[-a arguments]" 1>&2; exit 1; }
 
 while getopts ":hp:a:n" opt; do
     case ${opt} in
@@ -22,9 +18,6 @@ while getopts ":hp:a:n" opt; do
         ;;
         a)
             a+=("${OPTARG}")
-        ;;
-        n)
-            jupyter notebook --port=${port} --ip=${node}
         ;;
         \?)
             echo "Invalid option"
