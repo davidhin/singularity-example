@@ -12,6 +12,22 @@ The basic idea is to decouple:
 - Generated outputs (output folder)
 - HPC scripting (hpc folder)
 
+### Quickstart
+
+Production build (for deploying to system through SHUB)
+
+```
+git clone https://github.com/davidhin/singularity-example.git
+cd singularity-example
+singularity pull --name main.simg shub://davidhin/singularity-example:latest
+```
+
+Then, if on Phoenix, run:
+
+```
+sbatch hpc/run_notebook.sh
+```
+
 ### Setup without container (requires gdown)
 
 `-e` means editable, which is what we want when installing the package locally for development purposes.
@@ -36,12 +52,6 @@ Production build (for deploying to phoenix through SCP)
 ```
 sudo singularity build main.simg Singularity;
 scp ./main.simg aXXXXXXX@phoenix-login1.adelaide.edu.au:/hpcfs/users/aXXXXXXX/main.simg
-```
-
-Production build (for deploying to phoenix through SHUB)
-
-```
-singularity pull shub://davidhin/singularity-example:latest
 ```
 
 ### Troubleshooting
