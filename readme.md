@@ -2,7 +2,15 @@
 
 # Research Project Example
 
-This is an example project to show the setup of singlarity-based experimental research.
+This is an example project to show the setup of python and singularity-based experimental research.
+The idea is to decouple:
+
+- Development environment (Singularity)
+- Experimental code (Python module)
+- Path references (based on [this](https://stackoverflow.com/a/50194143/1889006))
+- Data storage (storage folder)
+- Generated outputs (output folder)
+- HPC scripting (hpc folder)
 
 ### Setup without container (requires gdown)
 
