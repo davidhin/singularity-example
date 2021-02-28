@@ -19,5 +19,11 @@ def outputs_root() -> Path:
     return path
 
 
+def get_path(path) -> Path:
+    """Get path, if exists. If not, create it."""
+    Path(path).mkdir(exist_ok=True, parents=True)
+    return path
+
+
 # https://stackoverflow.com/a/50194143/1889006
 # https://stackoverflow.com/a/53465812/1889006
