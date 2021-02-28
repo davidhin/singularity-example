@@ -12,7 +12,7 @@ The basic idea is to decouple:
 - Generated outputs (output folder)
 - HPC scripting (hpc folder)
 
-### Quickstart
+## Quickstart
 
 Production build (for deploying to system through SHUB)
 
@@ -20,6 +20,7 @@ Production build (for deploying to system through SHUB)
 git clone https://github.com/davidhin/singularity-example.git
 cd singularity-example
 singularity pull --name main.simg shub://davidhin/singularity-example:latest
+singularity run main.simg -p initialise
 ```
 
 Then, if on Phoenix, run:
@@ -28,7 +29,9 @@ Then, if on Phoenix, run:
 sbatch hpc/run_notebook.sh
 ```
 
-### Setup without container (requires gdown)
+## Development
+
+#### Setup without container (requires gdown)
 
 `-e` means editable, which is what we want when installing the package locally for development purposes.
 
@@ -38,7 +41,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-### Singularity Commands
+#### Singularity Commands
 
 Local build for development
 
@@ -54,9 +57,9 @@ sudo singularity build main.simg Singularity;
 scp ./main.simg aXXXXXXX@phoenix-login1.adelaide.edu.au:/hpcfs/users/aXXXXXXX/main.simg
 ```
 
-### Troubleshooting
+#### Troubleshooting
 
-#### Jupyter Notebook fix
+##### Jupyter Notebook fix
 
 ```
 jupyter notebook --generate-config -y
