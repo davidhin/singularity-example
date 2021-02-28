@@ -6,6 +6,8 @@ This is an example project to show the setup of singlarity.
 
 ### Setup without container (requires gdown)
 
+`-e` means editable, which is what we want when installing the package locally for development purposes.
+
 ```
 bash get_data.sh
 pip install -r requirements.txt
@@ -14,25 +16,24 @@ pip install -e .
 
 ### Singularity Commands
 
-Local build
+Local build for development
 
 ```
 sudo singularity build --sandbox main.img Singularity;
-
 singularity run main.img -p main;
 ```
 
-Deploy to Phoenix
+Production build (for deploying to phoenix through SCP)
 
 ```
 sudo singularity build main.simg Singularity;
-scp ./main.simg a1720858@phoenix-login1.adelaide.edu.au:/hpcfs/users/a1720858/singularity/singularity-example/main.simg
+scp ./main.simg aXXXXXXX@phoenix-login1.adelaide.edu.au:/hpcfs/users/aXXXXXXX/main.simg
 ```
 
-Install package locally. `-e` means editable, which is what we want.
+Production build (for deploying to phoenix through SHUB)
 
 ```
-pip install -e .
+singularity pull shub://davidhin/singularity-example:latest
 ```
 
 ### Troubleshooting
