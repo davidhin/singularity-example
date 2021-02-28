@@ -4,7 +4,9 @@
     ".pytest_cache": true,
     "**/*.egg-info": true,
     "**/__pycache__": true,
-    "**/main.img": true
+    "**/*.img": true,
+    "**/*.simg": true,
+    "**/*.sif": true
   },
   "python.pythonPath": "/home/david/Documents/miniconda/bin/python"
 }
