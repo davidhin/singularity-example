@@ -6,12 +6,13 @@ This CLI must be run in the directory folder of the cloned repository."
 usage() {
     echo "Usage: $0 \
 [-h help] \
+[-t run tests] \
 [-p run program <initialise|path_to_file>] \
     [-a arguments]" 1>&2
     exit 1
 }
 
-while getopts ":hp:a:n" opt; do
+while getopts ":hp:a:t" opt; do
     case ${opt} in
     h)
         usage
@@ -21,6 +22,9 @@ while getopts ":hp:a:n" opt; do
         ;;
     a)
         a+=("${OPTARG}")
+        ;;
+    t)
+        pytest tests/
         ;;
     \?)
         echo "Invalid option"
