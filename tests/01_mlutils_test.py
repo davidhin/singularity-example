@@ -1,9 +1,9 @@
-from singexample import helpers
+from singexample.helpers import ml_utils
 
 
 def test_encoder_categorical():
     """Test onehot encoder helper for categorical labels."""
-    onehot = helpers.EncoderHelper()
+    onehot = ml_utils.EncoderHelper()
     y_train = ["apple", "orange"]
     onehot.fit(y_train)
     y_train = onehot.transform(y_train)
@@ -14,7 +14,7 @@ def test_encoder_categorical():
 
 def test_encoder_numerical():
     """Test onehot encoder helper for numerical labels."""
-    onehot = helpers.EncoderHelper()
+    onehot = ml_utils.EncoderHelper()
     y_train = [1, 5]
     onehot.fit(y_train)
     y_train = onehot.transform(y_train)

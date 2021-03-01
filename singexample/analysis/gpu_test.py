@@ -1,8 +1,8 @@
-import singexample.helpers as sh
 import tensorflow as tf
 import tensorflow.keras.metrics as met
 import tensorflow_addons.metrics as tfa_met
-from singexample import tf_utils as tfu
+from singexample.helpers import ml_utils as mlu
+from singexample.helpers import tf_utils as tfu
 
 
 def create_model() -> tf.keras.models.Sequential:
@@ -24,7 +24,7 @@ x_train, x_test = x_train / 255.0, x_test / 255.0
 num_classes = len(set(y_train))
 
 # Encode labels
-onehot = sh.EncoderHelper()
+onehot = mlu.EncoderHelper()
 onehot.fit(y_train)
 y_train = onehot.transform(y_train)
 y_test = onehot.transform(y_test)

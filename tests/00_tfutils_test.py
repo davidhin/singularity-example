@@ -1,4 +1,4 @@
-from singexample import tf_utils
+from singexample.helpers import tf_utils
 
 
 def test_tb_logdir():
