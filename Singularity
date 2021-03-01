@@ -16,5 +16,6 @@ From:tensorflow/tensorflow:2.2.2-gpu-jupyter
     chmod u+x /cli.sh
 
     # Install dependencies here
-    echo "Installing python dependencies..."
+    apt update
+    apt install -y build-essential
     pip install -r /requirements.txt
