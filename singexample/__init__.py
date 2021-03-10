@@ -12,6 +12,27 @@ def storage_root() -> Path:
     return Path(__file__).parent.parent / "storage"
 
 
+def storage_external_root() -> Path:
+    """Get storage external path."""
+    path = storage_root() / "external"
+    Path(path).mkdir(exist_ok=True, parents=True)
+    return path
+
+
+def storage_interim_root() -> Path:
+    """Get storage interim path."""
+    path = storage_root() / "interim"
+    Path(path).mkdir(exist_ok=True, parents=True)
+    return path
+
+
+def storage_processed_root() -> Path:
+    """Get storage processed path."""
+    path = storage_root() / "processed"
+    Path(path).mkdir(exist_ok=True, parents=True)
+    return path
+
+
 def outputs_root() -> Path:
     """Get output path."""
     path = Path(__file__).parent.parent / "output"
