@@ -1,5 +1,5 @@
 Bootstrap:docker
-From:pytorch/pytorch:1.8.0-cuda11.1-cudnn8-runtime
+From:ufoym/deepo:all-jupyter-cu102
 
 %labels
     MAINTAINER admin
@@ -16,7 +16,6 @@ From:pytorch/pytorch:1.8.0-cuda11.1-cudnn8-runtime
     chmod u+x /cli.sh
 
     # Install dependencies here
-    add-apt-repository ppa:deadsnakes/ppa
     apt update
-    apt install -y build-essential python3.8
+    apt install -y build-essential
     pip install -r /requirements.txt
