@@ -1,5 +1,5 @@
 Bootstrap:docker
-From:ufoym/deepo:all-jupyter-cu102
+From:ufoym/deepo:pytorch-cu102
 
 %labels
     MAINTAINER admin
