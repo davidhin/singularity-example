@@ -9,11 +9,11 @@ def print_examples():
     """Print out examples using imports and storage."""
     print("You ran the Python file!")
     print(sys.argv)
-    print(se.project_root())
-    print(se.storage_root())
+    print(se.project_dir())
+    print(se.storage_dir())
 
-    df = pd.read_csv(se.storage_root() / "iris.csv")
-    df.to_csv(se.outputs_root() / "iris.csv")
+    df = pd.read_csv(se.external_dir() / "iris.csv")
+    df.to_csv(se.outputs_dir() / "iris.csv")
     print(df)
 
 

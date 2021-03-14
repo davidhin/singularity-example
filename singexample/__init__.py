@@ -2,45 +2,45 @@
 from pathlib import Path
 
 
-def project_root() -> Path:
+def project_dir() -> Path:
     """Get project path."""
     return Path(__file__).parent.parent
 
 
-def storage_root() -> Path:
+def storage_dir() -> Path:
     """Get storage path."""
     return Path(__file__).parent.parent / "storage"
 
 
-def storage_external_root() -> Path:
+def external_dir() -> Path:
     """Get storage external path."""
-    path = storage_root() / "external"
+    path = storage_dir() / "external"
     Path(path).mkdir(exist_ok=True, parents=True)
     return path
 
 
-def storage_interim_root() -> Path:
+def interim_dir() -> Path:
     """Get storage interim path."""
-    path = storage_root() / "interim"
+    path = storage_dir() / "interim"
     Path(path).mkdir(exist_ok=True, parents=True)
     return path
 
 
-def storage_processed_root() -> Path:
+def processed_dir() -> Path:
     """Get storage processed path."""
-    path = storage_root() / "processed"
+    path = storage_dir() / "processed"
     Path(path).mkdir(exist_ok=True, parents=True)
     return path
 
 
-def outputs_root() -> Path:
+def outputs_dir() -> Path:
     """Get output path."""
-    path = Path(__file__).parent.parent / "output"
+    path = storage_dir() / "outputs"
     Path(path).mkdir(exist_ok=True, parents=True)
     return path
 
 
-def get_path(path) -> Path:
+def get_dir(path) -> Path:
     """Get path, if exists. If not, create it."""
     Path(path).mkdir(exist_ok=True, parents=True)
     return path
