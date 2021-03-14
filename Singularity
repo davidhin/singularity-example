@@ -1,5 +1,5 @@
 Bootstrap:docker
-From:tensorflow/tensorflow:2.2.2-gpu-jupyter
+From:pytorch/pytorch
 
 %labels
     MAINTAINER admin
