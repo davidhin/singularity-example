@@ -17,3 +17,4 @@ fastparquet
 spacy
 transformers
 torchtext
+torchsummary
