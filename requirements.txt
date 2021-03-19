@@ -18,3 +18,4 @@ spacy
 transformers
 torchtext
 torchsummary
+imbalanced-learn
