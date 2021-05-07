@@ -1,5 +1,5 @@
 Bootstrap:docker
-From:ufoym/deepo:pytorch-cu102
+From:pytorch/pytorch:1.6.0-cuda10.1-cudnn7-runtime
 
 %labels
     MAINTAINER admin
@@ -15,7 +15,16 @@ From:ufoym/deepo:pytorch-cu102
 %post
     chmod u+x /cli.sh
 
-    # Install dependencies here
+    # Update
     apt update
-    apt install -y build-essential
+    apt install -y wget build-essential git
+
+    # Install miniconda
+    wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+    bash Miniconda3-latest-Linux-x86_64.sh -b
+
+    # Install Java build dependencies
+    apt install -y gradle graphviz-dev
+
+    # Install dependencies here
     pip install -r /requirements.txt

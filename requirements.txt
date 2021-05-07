@@ -19,3 +19,9 @@ transformers
 torchtext
 torchsummary
 imbalanced-learn
+dgl
+dgl-cu102
+networkx
+pydot
+graphviz
+python-Levenshtein
